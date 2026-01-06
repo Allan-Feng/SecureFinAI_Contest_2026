@@ -24,16 +24,28 @@ We design four tasks. These challenges allow contestants to participate in vario
 ## Tasks
 Each team can choose to participate in one or more tasks. The prizes will be awarded for each task.
 
-### Task I: TBD
+### Task I: Adaptive Evaluation for Financial LLMs
+This task focuses on benchmarking Financial Large Language Models (FinLLMs) using **Trismik’s adaptive testing pipeline**. Unlike traditional benchmarks, Trismik pipeline split the testing set into different difficulty levels, and can dynamically select test items based on the model's performance. Therefore evaluation is efficient. Participants are expected to submit models that can handle a diverse range of financial reasoning and understanding tasks, optimized for both accuracy and inference efficiency.
 
+**Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
 
+### Task II: Financial Search Agent Accuracy & Reliability
+This task benchmarks the reliability of financial search agents, specifically focusing on eliminating hallucinations and ensuring numerical precision. Participants are expected to finetune models and design agent pipelines that will be evaluated on their ability to retrieve and process financial data without errors.
 
-### Task II: TBD
+**Datasets:**
+*   **Hallucination Evaluation**: A 35-question set spanning real-time data, company fundamentals, and trading calculations. Ground truth is validated against Yahoo Finance.
+*   **Numerical & Temporal Accuracy**: A 24-question set derived from the **FinSearchComp** benchmark, testing real-time retrieval, historical lookup, and complex computation capabilities. Models are scored on exact match accuracy against expert-verified answers.
 
+### Task III: TBD
 
-### Task III：TBD
+### Task IV: VC Bench - Startup Success Prediction
+This task tests the ability of Large Language Models to act as Venture Capitalists by predicting the potential success of early-stage startups. Using the **VCBench** dataset, which consists of anonymized founder profiles, participants must predict whether a startup will achieve a significant liquidity event (IPO, M&A >$500M, or high-tier funding).
 
-### Task IV：TBD
+**Goal & Constraints:**
+*   **Objective:** Predict the binary "Success" label for given founder profiles.
+*   **Model Limits:** Participants must use and fine-tune models with **<14B parameters**.
+*   **Optimization:** Participants are encouraged to optimize input templates and output extraction methods alongside model fine-tuning.
+*   **Metric:** F1-Score.
 
 
 <p style="font-size: 14px;">

@@ -24,21 +24,27 @@ We design four tasks. These challenges allow contestants to participate in vario
 ## Tasks
 Each team can choose to participate in one or more tasks. The prizes will be awarded for each task.
 
-### Task I: Adaptive Evaluation for Financial LLMs
+### Task I: Adaptive Evaluation and Benchmarking Suite for Financial LLMs
 This task focuses on benchmarking Financial Large Language Models (FinLLMs) using **Trismik’s adaptive testing pipeline**. Unlike traditional benchmarks, Trismik pipeline split the testing set into different difficulty levels, and can dynamically select test items based on the model's performance. Therefore evaluation is efficient. Participants are expected to submit models that can handle a diverse range of financial reasoning and understanding tasks, optimized for both accuracy and inference efficiency.
 
 **Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
 
-### Task II: Financial Search Agent Accuracy & Reliability
+### Task II: Reliable Agentic FinSearch
 This task benchmarks the reliability of financial search agents, specifically focusing on eliminating hallucinations and ensuring numerical precision. Participants are expected to finetune models and design agent pipelines that will be evaluated on their ability to retrieve and process financial data without errors.
 
 **Datasets:**
 *   **Hallucination Evaluation**: A 35-question set spanning real-time data, company fundamentals, and trading calculations. Ground truth is validated against Yahoo Finance.
 *   **Numerical & Temporal Accuracy**: A 24-question set derived from the **FinSearchComp** benchmark, testing real-time retrieval, historical lookup, and complex computation capabilities. Models are scored on exact match accuracy against expert-verified answers.
 
-### Task III: TBD
+### Task III: FinRL-DeepSeek for Stock Trading
+This task is about developing automated stock trading agents trained on stock prices and financial news data by combining reinforcement learning and large language models (LLMs). Participants can build upon the [FinRL-DeepSeek project](https://github.com/benstaf/FinRL_DeepSeek) (e.g., with new prompts, new ways to inject LLM-processed news signals into the RL agent, new RL algorithms like GRPO) or explore more computationally intensive directions, such as adapting variants of the DeepSeek R1 training method to this stock trading task
 
-### Task IV: VC Bench - Startup Success Prediction
+**Datasets:**
+The [Financial News and Stock Price Integration Dataset (FNSPID)](https://huggingface.co/datasets/Zihan1004/FNSPID) [6] comprises stock prices and 15 million time-aligned financial news records for Nasdaq companies, covering the period from 1999 to 2023. The processed training dataset based on the FNSPID will be provided. Participants are also encouraged to utilize publicly available data, such as Twitter, or develop scraping/API AI agents for this purpose. Some teams can choose to focus their submission on improving the dataset, others on improving trading agents.
+
+
+
+### Task IV: AI for Venture Capital - Prediction of Startup Success 
 This task tests the ability of Large Language Models to act as Venture Capitalists by predicting the potential success of early-stage startups. Using the **VCBench** dataset, which consists of anonymized founder profiles, participants must predict whether a startup will achieve a significant liquidity event (IPO, M&A >$500M, or high-tier funding).
 
 **Goal & Constraints:**

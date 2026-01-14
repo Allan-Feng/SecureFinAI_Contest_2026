@@ -24,8 +24,8 @@ We design four tasks. These challenges allow contestants to participate in vario
 ## Tasks
 Each team can choose to participate in one or more tasks. The prizes will be awarded for each task.
 
-### Task I: Adaptive Evaluation and Benchmarking Suite for Financial LLMs
-This task focuses on benchmarking Financial Large Language Models (FinLLMs) using **Trismik’s adaptive testing pipeline**. Unlike traditional benchmarks, Trismik pipeline split the testing set into different difficulty levels, and can dynamically select test items based on the model's performance. Therefore evaluation is efficient. Participants are expected to submit models that can handle a diverse range of financial reasoning and understanding tasks, optimized for both accuracy and inference efficiency.
+### Task I: Adaptive Evaluation and Benchmarking Suite for Financial LLMs and Agents
+This task focuses on benchmarking Financial Large Language Models (FinLLMs) and agents using and an **adaptive testing pipeline**. Unlike traditional benchmarks, adaptive pipeline split the testing set into different difficulty levels, and can dynamically select test items based on the model's performance. Therefore evaluation is efficient. Participants are expected to submit models that can handle a diverse range of financial reasoning and understanding tasks, optimized for both accuracy and inference efficiency.
 
 **Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
 
@@ -42,14 +42,11 @@ This task is about developing automated stock trading agents trained on stock pr
 **Datasets:**
 The [Financial News and Stock Price Integration Dataset (FNSPID)](https://huggingface.co/datasets/Zihan1004/FNSPID) [6] comprises stock prices and 15 million time-aligned financial news records for Nasdaq companies, covering the period from 1999 to 2023. The processed training dataset based on the FNSPID will be provided. Participants are also encouraged to utilize publicly available data, such as Twitter, or develop scraping/API AI agents for this purpose. Some teams can choose to focus their submission on improving the dataset, others on improving trading agents.
 
-
-
-### Task IV: AI for Venture Capital - Prediction of Startup Success 
+### Task IV: AI for [Venture Capital](https://www.vcbench.com/) - Prediction of Startup Success 
 This task tests the ability of Large Language Models to act as Venture Capitalists by predicting the potential success of early-stage startups. Using the **VCBench** dataset, which consists of anonymized founder profiles, participants must predict whether a startup will achieve a significant liquidity event (IPO, M&A >$500M, or high-tier funding).
 
 **Goal & Constraints:**
 *   **Objective:** Predict the binary "Success" label for given founder profiles.
-*   **Model Limits:** Participants must use and fine-tune models with **<14B parameters**.
 *   **Optimization:** Participants are encouraged to optimize input templates and output extraction methods alongside model fine-tuning.
 *   **Metric:** F1-Score.
 
@@ -61,23 +58,10 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 [2] Liu, Xiao-Yang, et al. "Finrl-meta: Market environments and benchmarks for data-driven financial reinforcement learning." <em>Advances in Neural Information Processing Systems</em> 35 (2022): 1835-1849. [<a href="https://papers.neurips.cc/paper_files/paper/2022/file/0bf54b80686d2c4dc0808c2e98d430f7-Paper-Datasets_and_Benchmarks.pdf">NeurIPS</a>]
 </p>
 <p style="font-size: 14px;">
-[3] Liu, Xiao-Yang, et al. "FinRL: A deep reinforcement learning library for automated stock trading in quantitative finance." <em>arXiv preprint</em> arXiv:2011.09607 (2020). [<a href="https://arxiv.org/abs/2011.09607">arXiv</a>] [<a href="https://neurips.cc/virtual/2020/19841">NeurIPS 2020</a>]
+[3] Liu, Xiao-Yang, et al. "Fingpt: Democratizing internet-scale data for financial large language models." <em>arXiv preprint</em> arXiv:2307.10485 (2023). [<a href="https://arxiv.org/abs/2307.10485">arXiv</a>]
 </p>
 <p style="font-size: 14px;">
-[4] Liu, Xiao-Yang, et al. "Fingpt: Democratizing internet-scale data for financial large language models." <em>arXiv preprint</em> arXiv:2307.10485 (2023). [<a href="https://arxiv.org/abs/2307.10485">arXiv</a>]
-</p>
-<p style="font-size: 14px;">
-[5] Tian, Felix, et al. "Customized fingpt search agents using foundation models." <em>Proceedings of the 5th ACM International Conference on AI in Finance</em>. 2024. [<a href="https://dl.acm.org/doi/10.1145/3677052.3698637">ACM</a>]
-</p>
-<p style="font-size: 14px;">
-[6] Yanglet, Xiao-Yang Liu, Yupeng Cao, and Li Deng. "Multimodal financial foundation models (mffms): Progress, prospects, and challenges." <em>arXiv preprint</em> arXiv:2506.01973 (2025). [<a href="https://www.arxiv.org/abs/2506.01973">arXiv</a>]
-</p>
-<p style="font-size: 14px;">
-[7] Han, Shijie, et al. "Xbrl agent: Leveraging large language models for financial report analysis." <em>Proceedings of the 5th ACM International Conference on AI in Finance</em>. 2024. [<a href="https://dl.acm.org/doi/abs/10.1145/3677052.3698614">ACM</a>]
-</p>
-<p style="font-size: 14px;">
-[8] Peng, Xueqing, et al. "MultiFinBen: A Multilingual, Multimodal, and Difficulty-Aware Benchmark for Financial LLM Evaluation." <em>arXiv preprint</em> arXiv:2506.14028 (2025). [<a href="https://arxiv.org/abs/2506.14028">arXiv</a>]
-</p>
+[4] Lin, Shengyuan, et al. "Evaluation and Benchmarking Suite for Financial Large Language Models and Agents." NeurIPS 2025 Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling. [<a href="https://openreview.net/pdf?id=sSY4h3MFUB">NeurIPS 2025 Workshop</a>]
 
 
 ## Contact

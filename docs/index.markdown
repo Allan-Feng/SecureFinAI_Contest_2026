@@ -25,7 +25,7 @@ We design four tasks. These challenges allow contestants to participate in vario
 Each team can choose to participate in one or more tasks. The prizes will be awarded for each task.
 
 ### Task I: Adaptive Evaluation and Benchmarking Suite for Financial LLMs and Agents
-This task focuses on benchmarking Financial Large Language Models (FinLLMs) and agents using and an **adaptive testing pipeline**. Unlike traditional benchmarks, adaptive pipeline split the testing set into different difficulty levels, and can dynamically select test items based on the model's performance. Therefore evaluation is efficient. Participants are expected to submit models that can handle a diverse range of financial reasoning and understanding tasks, optimized for both accuracy and inference efficiency.
+This task focuses on benchmarking Financial Large Language Models (FinLLMs) and agents using an **adaptive testing pipeline**. Unlike traditional benchmarks, the adaptive pipeline partitions the test set into difficulty levels and dynamically selects test items based on model performance. This enables more efficient evaluation while preserving rigour. Participants are expected to submit models that can handle a diverse range of financial reasoning and comprehension tasks, optimised for both accuracy and inference efficiency.
 
 **Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
 

@@ -8,6 +8,8 @@ weight: 1
 <div style="text-align: center; display: flex; width: 100%; justify-content: space-evenly; align-items: center; gap: 1em; padding: 2em">
   <img style="width: 40%;" src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/logos/ieee-logo.png?raw=true" alt="IEEE Logo">
   <img style="width: 30%;" src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/logos/securefinai_cu.png?raw=true" alt="SecureFinAI Lab Logo">
+  <img style="width: 15%;" src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/logos/trismik.png?raw=true" alt="Trismik Logo">
+  <img style="width: 15%;" src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/logos/vela.png?raw=true" alt="Vela Logo">
 </div>
 
 ### Thanks to the AI4Finance Foundation open source community for their support.

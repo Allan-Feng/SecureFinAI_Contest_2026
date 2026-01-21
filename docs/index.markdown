@@ -35,14 +35,17 @@ This task focuses on benchmarking Financial Large Language Models (FinLLMs) and 
 This task benchmarks the reliability of financial search agents, specifically focusing on eliminating hallucinations and ensuring numerical precision. Participants are expected to finetune models and design agent pipelines that will be evaluated on their ability to retrieve and process financial data without errors.
 
 **Datasets:**
-*   **Hallucination Evaluation**: A 35-question set spanning real-time data, company fundamentals, and trading calculations. Ground truth is validated against Yahoo Finance.
-*   **Numerical & Temporal Accuracy**: A 24-question set derived from the **FinSearchComp** benchmark, testing real-time retrieval, historical lookup, and complex computation capabilities. Models are scored on exact match accuracy against expert-verified answers.
+*   **The FinSearchComp benchmark** consists of 635 financial questions (e.g., “What was the annual inflation rate in Australia in 2022?”) paired with their ground-truth answers (e.g., “6.6%,” allowing for minor rounding errors). These questions are designed to evaluate an agent’s proficiency of searching and reasoning in terms of numerical and temporal accuracy. The benchmark covers three types of tasks: (1) real-time retrieval of numerical data (Task 1), (2) simple lookup of historical data (Task 2), and (3) complex computation over historical data (Task 3). The dataset includes 244 questions for Task 1, 219 for Task 2, and 172 for Task 3.
+*   The link of benchmark: https://huggingface.co/datasets/ByteSeedXpert/FinSearchComp
 
-### Task III: FinRL-DeepSeek for Stock Trading
-This task is about developing automated stock trading agents trained on stock prices and financial news data by combining reinforcement learning and large language models (LLMs). Participants can build upon the [FinRL-DeepSeek project](https://github.com/benstaf/FinRL_DeepSeek) (e.g., with new prompts, new ways to inject LLM-processed news signals into the RL agent, new RL algorithms like GRPO) or explore more computationally intensive directions, such as adapting variants of the DeepSeek R1 training method to this stock trading task
+
+### Task III: Prediction Market Arbitrage
+This task focuses on developing trading agents that identify and execute arbitrage opportunities across two prediction markets, Kalshi and Polymarket, for a series of sports events with binary options. Models may incorporate sentiment signals in addition to market data to anticipate market moves when new information changes expectations during a game. Evaluation will be conducted via paper trading, where agents are tested on historical or simulated market data without real capital.
 
 **Datasets:**
-The [Financial News and Stock Price Integration Dataset (FNSPID)](https://huggingface.co/datasets/Zihan1004/FNSPID) [6] comprises stock prices and 15 million time-aligned financial news records for Nasdaq companies, covering the period from 1999 to 2023. The processed training dataset based on the FNSPID will be provided. Participants are also encouraged to utilize publicly available data, such as Twitter, or develop scraping/API AI agents for this purpose. Some teams can choose to focus their submission on improving the dataset, others on improving trading agents.
+*   **Kalshi Real-Time Sports Market Feed**: Market metadata and public market snapshots combined with WebSocket streams for real-time updates on the order book, public trades, and price or ticker changes.
+*   **Polymarket Real-Time Sports Market Feed**: Market metadata from the public Gamma API with market and outcome identifiers, paired with real-time updates from the CLOB WebSocket market feed to track live pricing and liquidity.
+*   **Sports Sentiment Signal Feed**: APIs for sports news and social media discussion, including headlines and alerts, injury and lineup updates, and player performance as sentiment inputs.
 
 ### Task IV: AI for [Venture Capital](https://www.vcbench.com/) - Prediction of Startup Success 
 This task tests the ability of Large Language Models to act as Venture Capitalists by predicting the potential success of early-stage startups. Using the **VCBench** dataset, which consists of anonymized founder profiles, participants must predict whether a startup will achieve a significant liquidity event (IPO, M&A >$500M, or high-tier funding).
@@ -52,6 +55,22 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 *   **Optimization:** Participants are encouraged to optimize input templates and output extraction methods alongside model fine-tuning.
 *   **Metric:** F1-Score.
 
+### Task V: Agentic Trading
+This task focuses on developing models for real-time financial decision making under uncertain conditions. It formulates trading as a reasoning-to-action problem, where agents must integrate time-varying signals such as prices, newsflow, and asset-specific fundamentals, make a discrete trading decision, and justify that decision with evidence-grounded rationales. Evaluation emphasizes both profitability and risk, and is conducted under a leakage-resistant, time-ordered protocol.
+
+**Datasets:**
+
+*   **ETH (Crypto)**: A dataset with daily snapshots starting from 2025-08-01 and updated daily. It includes price data, synthesized newsflow, and momentum annotations, as well as fundamental information where applicable.
+*   **MSFT (Equity)**: A dataset with daily snapshots starting from 2025-08-01 and updated daily. It includes price data, newsflow, momentum labels, and relevant financial filings for equity assets.
+
+**Objective & Constraints:**
+* Action: Models must output a discrete trading action (Buy, Hold, or Sell) based on the daily market context.
+* Rationale: Models must provide a concise textual rationale (maximum 50 words) that justifies the decision using evidence from the available inputs.
+* Evaluation Protocol: Evaluation follows a live, time-ordered setup with fixed daily submission deadlines. Teams may submit either daily decisions with verifiable timestamps or reproducible code that deterministically generates decisions from the provided inputs.
+
+**Metric:**
+* Primary: Cumulative Return (CR) over the evaluation horizon.
+* Secondary: Sharpe Ratio (SR), Maximum Drawdown (MD), Daily Volatility (DV), and Annualized Volatility (AV), capturing profitability, stability, and risk control.
 
 <p style="font-size: 14px;">
 [1] Wang, Keyi, et al. "FinRL Contests: Data‐Driven Financial Reinforcement Learning Agents for Stock and Crypto Trading." <em>Artificial Intelligence for Engineering</em> (2025). [<a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/aie2.12004">IET</a>] [<a href="https://arxiv.org/abs/2504.02281">arXiv</a>]

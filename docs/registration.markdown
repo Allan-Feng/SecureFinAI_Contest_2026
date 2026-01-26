@@ -20,9 +20,9 @@ weight: 2
 We will award contest certificates to all participating teams. Winners will be invited to attend the conference and have the opportunity to present their work and poster at the conference.
 
 ## Registration
-Team registration is done through the [form](). Please ensure that all team members provide their full names, emails, institutions, and the team name. We encourage you to use your institutional email to register.
+Team registration is done through the [form](https://docs.google.com/forms/d/e/1FAIpQLSdqjrC3sjjIlYzlWelsbcxTg_5oFsPVaTJcWTLqLueU1dAlhQ/viewform?usp=dialog). Please ensure that all team members provide their full names, emails, institutions, and the team name. We encourage you to use your institutional email to register.
 
-The top winners of each task should register the [conference]() and present their work in person or online at the conference. At least one author of each accepted paper should register the [conference](). Winners or papers with “No Show” may be redacted. Participants will be required to agree to this requirement at the time of submission.
+The top winners of each task should register the [conference](https://www.cloud-conf.net/datasec/2026/ids/index.html) and present their work in person or online at the conference. At least one author of each accepted paper should register the [conference](). Winners or papers with “No Show” may be redacted. Participants will be required to agree to this requirement at the time of submission.
 
 
 ## Rules

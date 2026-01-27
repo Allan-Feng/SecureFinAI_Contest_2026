@@ -86,6 +86,11 @@ This task focuses on developing models for real-time financial decision making u
 <p style="font-size: 14px;">
 [4] Lin, Shengyuan, et al. "Evaluation and Benchmarking Suite for Financial Large Language Models and Agents." NeurIPS 2025 Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling. [<a href="https://openreview.net/pdf?id=sSY4h3MFUB">NeurIPS 2025 Workshop</a>]
 </p>
+<p style="font-size: 14px;">
+[5] Yan Wang, Keyi Wang, Shanshan Yang, Jaisal Patel, Jeff Zhao, Fengran Mo, Xueqing Peng, Lingfei Qian, Jimin Huang, Guojun Xiong, Xiao-Yang Liu, Jian-Yun Nie. "FinAuditing: A Financial Taxonomy-Structured Multi-Document Benchmark for Evaluating LLMs." <em>arXiv preprint</em> arXiv:2510.08886 (2025). [<a href="https://arxiv.org/abs/2510.08886">arXiv</a>]
+</p>
+<p style="font-size: 14px;">
+[6] Yan Wang, Lingfei Qian, Xueqing Peng, Yang Ren, Keyi Wang, Yi Han, Dongji Feng, Fengran Mo, Shengyuan Lin, Qinchuan Zhang, Kaiwen He, Chenri Luo, Jianxing Chen, Junwei Wu, Chen Xu, Ziyang Xu, Jimin Huang, Guojun Xiong, Xiao-Yang Liu, Qianqian Xie, Jian-Yun Nie. "FinTagging: Benchmarking LLMs for Extracting and Structuring Financial Information." <em>arXiv preprint</em> arXiv:2505.20650 (2025). [<a href="https://arxiv.org/abs/2505.20650">arXiv</a>]
 
 ## Contact
 Contact email: [finrlcontest@gmail.com](mailto:finrlcontest@gmail.com)

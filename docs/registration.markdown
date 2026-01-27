@@ -8,12 +8,14 @@ weight: 2
 ## Timeline
 * **Team Registration Begin**: 
 
-    * Please register [here]().
-* **Starter-Kit Release**: 
-* **Solution Submission Deadline**:
-* **Poster Submission Deadline**: 
-* **Winner Notification**: 
-* **Winner Announcement**:
+    * Please register [here](https://docs.google.com/forms/d/e/1FAIpQLSdqjrC3sjjIlYzlWelsbcxTg_5oFsPVaTJcWTLqLueU1dAlhQ/viewform?usp=dialog).
+* **Starter-Kit Release**: Jan 30, 2026
+* **Paper Submission Deadline**: March 10, 2026
+* **Paper Camera Ready Deadline**: Apr 1, 2026
+* **Solution Submission Deadline**: Apr 20, 2026
+
+* **Winner Notification**: May 5, 2026 and during conference
+* **Winner Announcement**: During conference
 
 <span style="color:blue;">(All deadlines are at 11:59pm EST on the specified date.)</span>
 

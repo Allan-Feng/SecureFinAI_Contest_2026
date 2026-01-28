@@ -1,0 +1,9 @@
+pandas>=2.0.0
+yfinance>=0.2.0
+
+# Add your own dependencies below
+# Examples:
+# openai
+# transformers
+# ta  # Technical Analysis library
+# newsapi-python

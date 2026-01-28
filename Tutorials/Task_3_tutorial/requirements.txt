@@ -1,0 +1,8 @@
+pandas>=2.0.0
+requests>=2.31.0
+websockets>=12.0
+
+# Add your own dependencies below
+# Examples:
+# py-clob-client  # Polymarket Python SDK
+# openai          # For LLM-based analysis

@@ -21,6 +21,16 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 - Success = company achieved acquisition or IPO above threshold
 - Features include founder background, education, experience, etc.
 
-**Submission Format**
+**Submission Requirements**
+
+Participants must submit:
+1. **GitHub Repository**: Public or private repo containing your model code
+2. **HuggingFace Model Link**: Your fine-tuned model uploaded to HuggingFace Hub
+3. **Run Script**: A script (e.g., `run.py`) that we can execute to generate predictions
+4. **Requirements File**: `requirements.txt` with all dependencies
+
+**Output Format**:
 - Predict binary "Success" label (0 or 1) for each founder profile
 - Include confidence score (optional)
+
+We will evaluate your submission by running your model on the test set.

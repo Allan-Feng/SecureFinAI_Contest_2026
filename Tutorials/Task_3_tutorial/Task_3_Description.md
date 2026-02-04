@@ -1,24 +1,22 @@
-# Task III: Prediction Market Arbitrage
-
-**Description**
-This task focuses on developing trading agents that identify and execute arbitrage opportunities across two prediction markets, Kalshi and Polymarket, for a series of sports events with binary options. Models may incorporate sentiment signals in addition to market data to anticipate market moves when new information changes expectations during a game. Evaluation will be conducted via paper trading, where agents are tested on historical or simulated market data without real capital.
-
-**Datasets**
-
-*   **Kalshi Real-Time Sports Market Feed**: Market metadata and public market snapshots combined with WebSocket streams for real-time updates on the order book, public trades, and price or ticker changes.
-    - **API Documentation**: [https://trading-api.readme.io/docs](https://trading-api.readme.io/docs)
-    - **REST API + WebSocket** for real-time market data
-    - Requires Kalshi account for API key
-
-*   **Polymarket Real-Time Sports Market Feed**: Market metadata from the public Gamma API with market and outcome identifiers, paired with real-time updates from the CLOB WebSocket market feed to track live pricing and liquidity.
-    - **API Documentation**: [https://docs.polymarket.com](https://docs.polymarket.com)
-    - **CLOB API**: Central Limit Order Book for trading
-    - **Gamma API**: Market discovery and metadata
-    - **Python SDK**: [py-clob-client](https://github.com/Polymarket/py-clob-client)
-
-*   **Sports Sentiment Signal Feed**: APIs for sports news and social media discussion, including headlines and alerts, injury and lineup updates, and player performance as sentiment inputs.
-    - Participants may use any sports news API or social media API of their choice
-    - Examples: ESPN API, Twitter/X API, Reddit API, sports news RSS feeds
+# Task III: Prediction Market Arbitrage 
+This task focuses on developing trading agents that identify and execute arbitrage opportunities 
+across two prediction markets, Kalshi and Polymarket, for a series of sports events with binary 
+options. Models may incorporate sentiment signals in addition to market data to anticipate 
+market moves when new information changes expectations during a game. Evaluation will be 
+conducted via paper trading, where agents perform simulated trading on real market data 
+without real capital. 
+Datasets:  
+Kalshi Data: Market metadata and public market snapshots collected via the Kalshi API, with 
+optional WebSocket streams for real-time updates including order book changes, public trades, 
+and price or ticker movements. 
+Kalshi API Docs — https://docs.kalshi.com/ 
+Polymarket Data: Market metadata from Polymarket’s public Gamma API (series, events, 
+markets, and outcome identifiers), paired with real-time updates from the CLOB WebSocket 
+market feed to track live pricing and liquidity. 
+Polymarket Developer Docs — https://docs.polymarket.com/quickstart/overview 
+Sentiment Data: Sports news collected from RSS feeds across multiple sources, including 
+breaking headlines and alerts, injury and lineup updates, and other game-related developments 
+that can be used as sentiment inputs.
 
 **Key Capabilities Required**
 - Real-time market data processing

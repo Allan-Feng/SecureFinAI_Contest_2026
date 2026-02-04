@@ -58,21 +58,14 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 *   **Metric:** F1-Score.
 
 ### Task V: Agentic Trading
-This task focuses on developing models for real-time financial decision making under uncertain conditions. It formulates trading as a reasoning-to-action problem, where agents must integrate time-varying signals such as prices, newsflow, and asset-specific fundamentals, make a discrete trading decision, and justify that decision with evidence-grounded rationales. Evaluation emphasizes both profitability and risk, and is conducted under a leakage-resistant, time-ordered protocol.
+This task focuses on developing LLM agents for quantitative trading in a real-time paper trading setting. It formulates trading as a **reasoning-to-action** problem, where agents integrate real-time signals such as **prices, newsflow, and asset-specific fundamentals** and make trading actions. Evaluation will be conducted via paper trading on an Alpaca paper trading account, with metrics emphasizing profitability and risk.
 
 **Datasets:**
 
-*   **ETH (Crypto)**: A dataset with daily snapshots starting from 2025-08-01 and updated daily. It includes price data, synthesized newsflow, and momentum annotations, as well as fundamental information where applicable.
-*   **MSFT (Equity)**: A dataset with daily snapshots starting from 2025-08-01 and updated daily. It includes price data, newsflow, momentum labels, and relevant financial filings for equity assets.
+Participants may fetch historical market data from Alpaca Market Data API:
+* **Stock**: [https://alpaca.markets/sdks/python/api_reference/data/stock.html](https://alpaca.markets/sdks/python/api_reference/data/stock.html)
+* **Crypto**: [https://alpaca.markets/sdks/python/api_reference/data/crypto.html](https://alpaca.markets/sdks/python/api_reference/data/crypto.html)
 
-**Objective & Constraints:**
-* Action: Models must output a discrete trading action (Buy, Hold, or Sell) based on the daily market context.
-* Rationale: Models must provide a concise textual rationale (maximum 50 words) that justifies the decision using evidence from the available inputs.
-* Evaluation Protocol: Evaluation follows a live, time-ordered setup with fixed daily submission deadlines. Teams may submit either daily decisions with verifiable timestamps or reproducible code that deterministically generates decisions from the provided inputs.
-
-**Metric:**
-* Primary: Cumulative Return (CR) over the evaluation horizon.
-* Secondary: Sharpe Ratio (SR), Maximum Drawdown (MD), Daily Volatility (DV), and Annualized Volatility (AV), capturing profitability, stability, and risk control.
 
 <p style="font-size: 14px;">
 [1] Wang, Keyi, et al. "FinRL Contests: Data‐Driven Financial Reinforcement Learning Agents for Stock and Crypto Trading." <em>Artificial Intelligence for Engineering</em> (2025). [<a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/aie2.12004">IET</a>] [<a href="https://arxiv.org/abs/2504.02281">arXiv</a>]

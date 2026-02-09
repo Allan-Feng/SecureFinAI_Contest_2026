@@ -1,3 +1,4 @@
+---
 layout: page
 title: Organizers
 permalink: /5-organizers/

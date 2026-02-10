@@ -34,11 +34,21 @@ This task focuses on benchmarking Financial Large Language Models (FinLLMs) and 
 **Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
 
 ### Task II: Reliable Agentic FinSearch
-This task benchmarks the reliability of financial search agents, specifically focusing on eliminating hallucinations and ensuring numerical precision. Participants are expected to finetune models and design agent pipelines that will be evaluated on their ability to retrieve and process financial data without errors.
+**Task Description:**
+Numerical accuracy is critical for financial tasks. On a small curated question set, we manually compared [Agentic FinSearch](https://chromewebstore.google.com/detail/agentic-finsearch/aehnlpneoncdfioafiigiljmbghccami?hl=en&authuser=0) (a google chrome extension) with [Perplexity](https://www.perplexity.ai/) (with financial support, [Link](https://www.perplexity.ai/finance)). Our Agentic FinSearch outperforms Perplexity substantially! 
 
-**Datasets:**
-*   **The FinSearchComp benchmark** consists of 635 financial questions (e.g., “What was the annual inflation rate in Australia in 2022?”) paired with their ground-truth answers (e.g., “6.6%,” allowing for minor rounding errors). These questions are designed to evaluate an agent’s proficiency of searching and reasoning in terms of numerical and temporal accuracy. The benchmark covers three types of tasks: (1) real-time retrieval of numerical data (Task 1), (2) simple lookup of historical data (Task 2), and (3) complex computation over historical data (Task 3). The dataset includes 244 questions for Task 1, 219 for Task 2, and 172 for Task 3.
-*   The link of benchmark: https://huggingface.co/datasets/ByteSeedXpert/FinSearchComp
+This task invites teams to try our [Agentic FinSearch](https://chromewebstore.google.com/detail/agentic-finsearch/aehnlpneoncdfioafiigiljmbghccami?hl=en&authuser=0) demo and test your LLMs or agents on a large question set. Accurate retrieval of real-time financial data is a core infrastructure for building FinAgents. Higher numerical accuracy, lower hallucination & misinformation, and air-gapped deployment are three features. We encourage you to build powerful Agentic FinSearch agents. 
+
+<div style="text-align: center;">
+  <img src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/pictures/task_2.png?raw=true" alt="Fig. 1. Agentic FinSearch on Yahoo Finance" style="width: 80%;">
+  <p>Fig. 1. Agentic FinSearch on Yahoo Finance.</p>
+</div>
+
+**Question sets for benchmarking:**
+* Real-time retrieval of market data
+* Simple lookup of historical data
+* Complex computations over historical data
+* Hallucinations and misinformation
 
 
 ### Task III: Prediction Market Arbitrage

@@ -65,8 +65,8 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 *   **Optimization:** Participants are encouraged to optimize input templates and output extraction methods alongside model fine-tuning.
 *   **Metric:** F1-Score.
 
-### Task V: Agentic Trading with OpenClaw
-This task focuses on developing LLM agents with OpenClaw for quantitative trading in a real-time paper trading setting. It formulates trading as a **reasoning-to-action** problem, where agents integrate real-time signals such as **prices, newsflow, and asset-specific fundamentals** and make trading actions. Evaluation will be conducted via paper trading on an Alpaca paper trading account, with metrics emphasizing profitability and risk.
+### Task V: Agentic Trading Using OpenClaw
+This task focuses on developing LLM agents using OpenClaw for quantitative trading in a real-time paper trading setting. It formulates trading as a **reasoning-to-action** problem, where agents integrate real-time signals such as **prices, newsflow, and asset-specific fundamentals** and make trading actions. Evaluation will be conducted via paper trading on an Alpaca paper trading account, with metrics emphasizing profitability and risk.
 
 **Datasets:**
 

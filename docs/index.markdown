@@ -29,11 +29,15 @@ We design four tasks. These challenges allow contestants to participate in vario
 Each team can choose to participate in one or more tasks. The prizes will be awarded for each task.
 
 ### Task I: Adaptive Evaluation and Benchmarking Suite for Financial LLMs and Agents
+**Why this matters:** Adaptive testing enables accurate model evaluation using only a dynamic subset of test items, significantly reducing evaluation overhead and cost compared to static benchmarks.
+
 This task focuses on benchmarking Financial Large Language Models (FinLLMs) and agents using an **adaptive testing pipeline**. Unlike traditional benchmarks, the adaptive pipeline partitions the test set into difficulty levels and dynamically selects test items based on model performance. This enables more efficient evaluation while preserving rigour. Participants are expected to submit models that can handle a diverse range of financial reasoning and comprehension tasks, optimised for both accuracy and inference efficiency.
 
 **Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
 
 ### Task II: Reliable Agentic FinSearch
+**Why this matters:** Accurate, hallucination-free retrieval of real-time financial data is fundamental for trustworthy financial agents.
+
 **Task Description:**
 Numerical accuracy is critical for financial tasks. On a small curated question set, we manually compared [Agentic FinSearch](https://chromewebstore.google.com/detail/agentic-finsearch/aehnlpneoncdfioafiigiljmbghccami?hl=en&authuser=0) (a google chrome extension) with [Perplexity](https://www.perplexity.ai/) (with financial support, [Link](https://www.perplexity.ai/finance)). Our Agentic FinSearch outperforms Perplexity substantially! 
 
@@ -52,6 +56,8 @@ This task invites teams to try our [Agentic FinSearch](https://chromewebstore.go
 
 
 ### Task III: Prediction Market Arbitrage
+**Why this matters:** Exploiting inefficiencies in prediction markets demonstrates an agent's ability to synthesize information and react faster than human traders.
+
 This task focuses on developing trading agents that identify and execute arbitrage opportunities across two prediction markets, Kalshi and Polymarket, for a series of sports events with binary options. Models may incorporate sentiment signals in addition to market data to anticipate market moves when new information changes expectations during a game. Evaluation will be conducted via paper trading, where agents perform simulated trading on real market data without real capital.
 
 **Datasets:**
@@ -68,6 +74,8 @@ breaking headlines and alerts, injury and lineup updates, and other game-related
 that can be used as sentiment inputs. 
 
 ### Task IV: AI for [Venture Capital](https://www.vcbench.com/) - Prediction of Startup Success 
+**Why this matters:** Venture capital investment is high-risk; AI can help identify promising startups by analyzing patterns in founder profiles that humans might miss.
+
 This task tests the ability of Large Language Models to act as Venture Capitalists by predicting the potential success of early-stage startups. Using the **VCBench** dataset, which consists of anonymized founder profiles, participants must predict whether a startup will achieve a significant liquidity event (IPO, M&A >$500M, or high-tier funding).
 
 **Goal & Constraints:**
@@ -76,6 +84,8 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 *   **Metric:** F1-Score.
 
 ### Task V: Agentic Trading Using OpenClaw
+**Why this matters:** AI agents have seen rapid development and have been applied to financial trading tasks. Recent work such as Agent Market Arena (AMA) by FinAI and Alpha Arena by NoF1 introduces arena-style benchmarks that demonstrate the capability of AI agents to trade in market environments under standardized settings. While these benchmarks focus on comparing agent performance within fixed interfaces, this task emphasizes flexibility and agent design. Participants are encouraged to build their own trading agents, including data, agent architecture, and trading strategy, and evaluate them through live paper trading on Alpaca for stock or cryptocurrency markets.
+
 This task focuses on developing LLM agents using OpenClaw for quantitative trading in a real-time paper trading setting. It formulates trading as a **reasoning-to-action** problem, where OpenClaw agents integrate real-time signals such as **prices, newsflow, and asset-specific fundamentals** and make trading actions. Evaluation will be conducted via paper trading on an Alpaca paper trading account, with metrics emphasizing profitability and risk.
 
 **Datasets**
@@ -99,10 +109,11 @@ Participants will create an Alpaca paper trading account, run their agent to tra
 
 > *A single paper trading account trade asset from **only one market type: stock/crypto**. Create two accounts if you are participating in both the stock and crypto tracks. Stock and crypto tracks are evaluated separately.*
 
-**Why this matters**
-AI agents have seen rapid development and have been applied to financial trading tasks. Recent work such as Agent Market Arena (AMA) by FinAI and Alpha Arena by NoF1 introduces arena-style benchmarks that demonstrate the capability of AI agents to trade in market environments under standardized settings. While these benchmarks focus on comparing agent performance within fixed interfaces, this task emphasizes flexibility and agent design. Participants are encouraged to build their own trading agents, including data, agent architecture, and trading strategy, and evaluate them through live paper trading on Alpaca for stock or cryptocurrency markets.
+
 
 ### Task VI: Financial Auditing Model Training and Evaluation over XBRL Filings (Taxonomy-Grounded)
+**Why this matters:** Automating financial auditing with high precision ensures compliance and trust in financial reporting, reducing manual effort and errors.
+
 This task focuses on training, developing, and evaluating specialized auditing models for professional-grade financial auditing over structured, taxonomy-driven financial disclosures. Participants are required to build an auditing-oriented model that reasons jointly over multi-document XBRL filings and the US-GAAP taxonomy, with the goal of detecting semantic, structural, and numerical inconsistencies in real-world financial reports.
 Unlike traditional financial NLP tasks that treat documents as unstructured text, this task emphasizes model learning under explicit accounting and taxonomy constraints. Models must internalize the hierarchical structure of XBRL filings, cross-document dependencies, and formal accounting logic, closely reflecting real-world auditing workflows. The task is grounded in real SEC XBRL filings and Data Quality Committee (DQC) error cases, and is designed to evaluate whether trained models can perform reliable, regulation-aligned financial auditing, rather than surface-level pattern matching.
 

@@ -102,6 +102,99 @@ Participants will create an Alpaca paper trading account, run their agent to tra
 **Why this matters**
 AI agents have seen rapid development and have been applied to financial trading tasks. Recent work such as Agent Market Arena (AMA) by FinAI and Alpha Arena by NoF1 introduces arena-style benchmarks that demonstrate the capability of AI agents to trade in market environments under standardized settings. While these benchmarks focus on comparing agent performance within fixed interfaces, this task emphasizes flexibility and agent design. Participants are encouraged to build their own trading agents, including data, agent architecture, and trading strategy, and evaluate them through live paper trading on Alpaca for stock or cryptocurrency markets.
 
+### Task VI: Financial Auditing Model Training and Evaluation over XBRL Filings (Taxonomy-Grounded)
+This task focuses on training, developing, and evaluating specialized auditing models for professional-grade financial auditing over structured, taxonomy-driven financial disclosures. Participants are required to build an auditing-oriented model that reasons jointly over multi-document XBRL filings and the US-GAAP taxonomy, with the goal of detecting semantic, structural, and numerical inconsistencies in real-world financial reports.
+Unlike traditional financial NLP tasks that treat documents as unstructured text, this task emphasizes model learning under explicit accounting and taxonomy constraints. Models must internalize the hierarchical structure of XBRL filings, cross-document dependencies, and formal accounting logic, closely reflecting real-world auditing workflows. The task is grounded in real SEC XBRL filings and Data Quality Committee (DQC) error cases, and is designed to evaluate whether trained models can perform reliable, regulation-aligned financial auditing, rather than surface-level pattern matching.
+
+**Datasets**
+Participants must train their auditing models using datasets constructed from real US-GAAP-compliant XBRL filings collected from SEC disclosures between 2022 and 2024: [https://www.sec.gov/edgar/search/](https://www.sec.gov/edgar/search/). 
+Each training and evaluation instance consists of multiple interconnected XBRL documents, including:
+* Instance documents containing reported financial facts
+* Schema documents defining financial elements
+* Presentation, calculation, definition, and label linkbases capturing hierarchical and computational relations
+* Reference US-GAAP taxonomy, including concepts and their semantic and structural relationships
+
+These datasets are intended to support end-to-end auditing model training, including pretraining, fine-tuning, and task-specific adaptation.
+**Important (Contest Dataset Note):**
+This repo may reference the original auditing datasets (e.g., TheFinAI/FinMR) released for the auditing paper [5]. 
+For this contest, the official evaluation should use the curated subset datasets:
+(1) **FinSM_Sub**: [https://huggingface.co/datasets/TheFinAI/FinSM_Sub](https://huggingface.co/datasets/TheFinAI/FinSM_Sub)
+(2) **FinRE_Sub**: [https://huggingface.co/datasets/TheFinAI/FinRE_Sub](https://huggingface.co/datasets/TheFinAI/FinRE_Sub)
+(3) **FinMR_Sub**: [https://huggingface.co/datasets/TheFinAI/FinMR_Sub](https://huggingface.co/datasets/TheFinAI/FinMR_Sub)
+These subsets were specifically prepared for the contest and are recommended for final reporting/leaderboard evaluation.
+
+
+**Auditing Subtasks**
+The auditing model is evaluated on three complementary subtasks, each corresponding to a core auditing capability. Participants are encouraged to design a unified model or multi-head architecture that can handle all three tasks.
+
+(1) **FinSM – Financial Semantic Matching**
+* **Goal:** Train a model to identify semantically incorrect US-GAAP concept tags used in XBRL filings.
+* **Input:** A financial query, an XBRL filing segment, and the relevant portion of the US-GAAP taxonomy.
+* **Output:** A set of US-GAAP concepts that are semantically mismatched or inappropriate for the reported financial fact. 
+* **Output Example:** `["us-gaap:Revenues", "us-gaap:OperatingIncomeLoss"]`
+
+
+(2) **FinRE – Financial Relationship Extraction**
+* **Goal:** Train a model to detect erroneous hierarchical or compositional relationships between financial concepts in XBRL filings.
+* **Input:** Two financial concepts, the XBRL filing context, and corresponding taxonomy definitions.
+* **Output:** A single error-type label describing the incorrect relationship: `Reversal`, `Inappropriateness`, or `CombinationErr`.
+
+(3) **FinMR – Financial Mathematical Reasoning**
+* **Goal:** Train a model to verify numerical consistency by reasoning over accounting logic and calculation linkbases.
+* **Input:** A question about a reported financial value, together with its implied calculated value, the XBRL filing context, and the relevant taxonomy information.
+* **Output:** A JSON object containing:
+```json
+{
+  "extracted_value": <reported value>,
+  "calculated_value": <computed value>
+}
+```
+
+**Objective & Constraints**
+(1) **Training Objective**
+Participants must train an auditing-oriented model that maximizes performance across all three subtasks by learning to reason over:
+* Taxonomy semantics (concept meaning and usage)
+* Hierarchical and relational structures in XBRL filings
+* Multi-step numerical calculations grounded in accounting rules
+
+The ultimate objective is to systematically improve auditing performance on FinSM, FinRE, and FinMR, rather than optimizing for a single isolated task.
+
+(2) **Output Constraints**
+Model outputs must strictly follow the specified formats:
+* JSON arrays for FinSM
+* Single-label classification for FinRE
+* JSON objects for FinMR
+
+No explanations, chain-of-thought, or free-form text are allowed unless explicitly required by the task specification.
+
+(3) **Evaluation Setting**
+* All evaluations are conducted in a static, reproducible offline setting using held-out SEC XBRL filings.
+* Input contexts may be long (often exceeding 30k tokens), reflecting realistic auditing complexity.
+* Models must rely solely on the provided SEC XBRL data and taxonomy resources. External financial knowledge sources are not permitted during evaluation.
+**Repository Scope (Inference + Evaluation Only):**
+This repository provides inference pipelines and evaluation scripts only.
+* `pipeline-vllm`: inference using vLLM
+* `pipeline-hf`: inference using Hugging Face Transformers
+After generating predictions, use the evaluation scripts for FinSM/FinRE/FinMR to compute metrics.
+Training code is NOT provided; participants are expected to train their own models.
+
+**Metrics**
+Model performance is evaluated separately and jointly across the three subtasks using auditing-oriented metrics:
+* **FinSM (Semantic Matching)**
+    * Hit Rate@k
+    * Recall@k
+    * Macro-F1@k
+* **FinRE (Relationship Extraction)**
+    * Accuracy
+    * Macro Precision, Recall, and F1
+* **FinMR (Mathematical Reasoning)**
+    * Overall Accuracy (LLM-as-a-judge)
+    * Structural Error Rate (SER)
+    * Extraction Error Rate (EER)
+    * Calculation Error Rate (CER)
+
+These metrics jointly assess semantic correctness, structural grounding, numerical reliability, and error localization, providing a comprehensive evaluation of trained auditing models.
+
 
 <p style="font-size: 14px;">
 [1] Wang, Keyi, et al. "FinRL Contests: Data‐Driven Financial Reinforcement Learning Agents for Stock and Crypto Trading." <em>Artificial Intelligence for Engineering</em> (2025). [<a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/aie2.12004">IET</a>] [<a href="https://arxiv.org/abs/2504.02281">arXiv</a>]

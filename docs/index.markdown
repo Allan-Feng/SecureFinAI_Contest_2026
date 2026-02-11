@@ -29,11 +29,25 @@ We design four tasks. These challenges allow contestants to participate in vario
 Each team can choose to participate in one or more tasks. The prizes will be awarded for each task.
 
 ### Task I: Adaptive Evaluation and Benchmarking Suite for Financial LLMs and Agents
-**Why this matters:** Adaptive testing enables accurate model evaluation using only a dynamic subset of test items, significantly reducing evaluation overhead and cost compared to static benchmarks.
+**Why this matters:** Adaptive testing enables accurate model evaluation using only a dynamic subset of test items, significantly reducing evaluation overhead and cost compared to static benchmarks. Furthermore, we encourage comparison against and defeating BloombergGPT to showcase superior financial reasoning capabilities.
 
 This task focuses on benchmarking Financial Large Language Models (FinLLMs) and agents using an **adaptive testing pipeline**. Unlike traditional benchmarks, the adaptive pipeline partitions the test set into difficulty levels and dynamically selects test items based on model performance. This enables more efficient evaluation while preserving rigour. Participants are expected to submit models that can handle a diverse range of financial reasoning and comprehension tasks, optimised for both accuracy and inference efficiency.
 
 **Datasets:** We utilize the standard evaluation suite referenced in BloombergGPT, integrated into the adaptive framework. This includes **FPB** (sentiment analysis), **FiQA-SA** (aspect-based sentiment), **Headlines** (market news classification), **NER** (entity recognition), and **ConvFinQA** (conversational financial Q&A).
+
+**Performance Comparison:**
+
+| | BloombergGPT | GPT-NeoX | OPT 66B | BLOOM 176B |
+| :--- | :---: | :---: | :---: | :---: |
+| **ConvFinQA** | 43.41 | 30.06 | 27.88 | 36.31 |
+| **FiQA SA** | 75.07 | 50.59 | 51.60 | 53.12 |
+| **FPB** | 51.07 | 44.64 | 48.67 | 50.25 |
+| **Headline** | 82.20 | 73.22 | 79.41 | 76.51 |
+| **NER** | 60.82 | 60.98 | 57.49 | 55.56 |
+| **All Tasks (avg)** | **62.51** | 51.90 | 53.01 | 54.35 |
+| **All Tasks (WR)** | **0.93** | 0.27 | 0.33 | 0.47 |
+
+*Table 8: Results on financial domain tasks.*
 
 ### Task II: Reliable Agentic FinSearch
 **Why this matters:** Accurate, hallucination-free retrieval of real-time financial data is fundamental for trustworthy financial agents.

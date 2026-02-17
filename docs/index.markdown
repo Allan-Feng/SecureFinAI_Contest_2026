@@ -37,7 +37,7 @@ This task focuses on benchmarking Financial Large Language Models (FinLLMs) and 
 
 **Performance Comparison:**
 
-| | BloombergGPT | GPT-NeoX | OPT 66B | BLOOM 176B |
+| | [BloombergGPT](https://arxiv.org/abs/2303.17564) | GPT-NeoX | OPT 66B | BLOOM 176B |
 | :--- | :---: | :---: | :---: | :---: |
 | **ConvFinQA** | 43.41 | 30.06 | 27.88 | 36.31 |
 | **FiQA SA** | 75.07 | 50.59 | 51.60 | 53.12 |

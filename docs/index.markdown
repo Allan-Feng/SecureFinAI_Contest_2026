@@ -7,6 +7,7 @@ weight: 1
 
 <div style="text-align: center; display: flex; width: 100%; justify-content: space-evenly; align-items: center; gap: 1em; padding: 2em">
   <img style="width: 40%;" src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/logos/ieee-logo.png?raw=true" alt="IEEE Logo">
+</div>
 
 <div style="text-align: center; display: flex; width: 100%; justify-content: space-evenly; align-items: center; gap: 1em; padding: 2em">
   <img style="width: 30%;" src="https://github.com/Open-Finance-Lab/SecureFinAI_Contest_2026/blob/main/docs/assets/logos/trismik.png?raw=true" alt="Trismik Logo">
@@ -36,7 +37,7 @@ This task focuses on benchmarking Financial Large Language Models (FinLLMs) and 
 
 **Performance Comparison:**
 
-| | BloombergGPT | GPT-NeoX | OPT 66B | BLOOM 176B |
+| | [BloombergGPT](https://arxiv.org/abs/2303.17564) | GPT-NeoX | OPT 66B | BLOOM 176B |
 | :--- | :---: | :---: | :---: | :---: |
 | **ConvFinQA** | 43.41 | 30.06 | 27.88 | 36.31 |
 | **FiQA SA** | 75.07 | 50.59 | 51.60 | 53.12 |

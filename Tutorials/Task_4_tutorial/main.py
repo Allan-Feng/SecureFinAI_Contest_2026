@@ -4,35 +4,44 @@ Task 4 Main Script - AI for Venture Capital
 This script runs inference on the VCBench dataset.
 """
 
-from data_loader import load_vcbench
-from example_agent import ExampleAgent
+from data_loader import read_train_data, read_test_data, read_dev_data
+from evaluate import get_F_score
 import json
-
-def main():
-    # 1. Load data
-    data = load_vcbench()
+from example_model import LLMForVC
+def testModel():
+    # Run inference on both train and test sets
+    train_data = read_train_data()
+    test_data = read_test_data()
     
-    # 2. Initialize model
-    agent = ExampleAgent()
+    agent = LLMForVC()  # Initialize your model/agent here
     
-    # 3. Run inference
+    outputs = agent.batch_predict(train_data["input"])
+    
     results = []
-    for i, profile in enumerate(data):
-        if i >= 5:  # Limit for demo
-            break
-        prediction = agent.predict(profile)
+    for output, profile in zip(outputs, train_data):
+
         results.append({
-            "founder_id": profile.get("founder_id", str(i)),
-            "prediction": prediction["prediction"],
-            "confidence": prediction["confidence"]
+            "founder_uuid": profile.get("uuid"),
+            "input": profile.get("input"),
+            "prediction": output
         })
     
-    # 4. Save results
-    with open("submission.jsonl", "w") as f:
+    
+    F_score, acc = get_F_score(outputs, train_data["output"])
+    print(f"F-score: {F_score}, Accuracy: {acc}")
+    
+    
+    
+    
+    with open("train_submission.jsonl", "w") as f:
         for r in results:
             f.write(json.dumps(r) + "\n")
     
-    print(f"\nSaved {len(results)} predictions to submission.jsonl")
+    
 
+def main():
+    testModel()
+    
+    
 if __name__ == "__main__":
     main()

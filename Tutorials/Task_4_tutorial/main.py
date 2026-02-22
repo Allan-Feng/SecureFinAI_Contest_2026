@@ -4,10 +4,13 @@ Task 4 Main Script - AI for Venture Capital
 This script runs inference on the VCBench dataset.
 """
 
+import datetime
+
 from data_loader import read_train_data, read_test_data, read_dev_data
 from evaluate import get_F_score
 import json
 from example_model import LLMForVC
+import pandas as pd
 def testModel():
     # Run inference on both train and test sets
     train_data = read_train_data()
@@ -32,11 +35,28 @@ def testModel():
     
     
     
+
+def dev_prediction():
+    dev_data = read_dev_data()
     
-    with open("train_submission.jsonl", "w") as f:
-        for r in results:
-            f.write(json.dumps(r) + "\n")
+    agent = LLMForVC()  # Initialize your model/agent here
     
+    outputs = agent.batch_predict(dev_data["input"])
+    
+    results = []
+    for output, profile in zip(outputs, dev_data):
+
+        results.append({
+            "founder_uuid": profile.get("uuid"),
+            "input": profile.get("input"),
+            "prediction": output
+        })
+    
+    df = pd.DataFrame(results)
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    out_file = f"results/dev_predictions_{timestamp}.csv"
+    df.to_csv(out_file, index=False)
+    print(f"\n✅ Saved dev predictions to {out_file}")
     
 
 def main():

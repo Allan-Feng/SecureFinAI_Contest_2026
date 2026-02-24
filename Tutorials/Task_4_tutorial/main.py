@@ -4,7 +4,7 @@ Task 4 Main Script - AI for Venture Capital
 This script runs inference on the VCBench dataset.
 """
 
-import datetime
+from datetime import datetime
 
 from data_loader import read_train_data, read_test_data, read_dev_data
 from evaluate import get_F_score
@@ -38,7 +38,7 @@ def testModel():
     
 
 def dev_prediction():
-    dev_data = read_dev_data()
+    dev_data = read_dev_data()[0:100]
     inputs = [item["input"] for item in dev_data]
     agent = LLMForVC() 
     

@@ -46,6 +46,6 @@ def read_dev_data():
     founders_data = pd.read_csv("VCbench_dev.csv")
     data_list = [row.to_dict() for _, row in founders_data.iterrows()]
 
-    processed_data = [{"input": item["anonymised_prose"]} for item in data_list]
+    processed_data = [{"uuid": item["founder_uuid"], "input": item["anonymised_prose"]} for item in data_list]
 
     return processed_data

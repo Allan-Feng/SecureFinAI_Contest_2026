@@ -20,9 +20,9 @@ class LLMForVC:
     def __init__(self, model_name="Qwen/Qwen3-8B"):
         self.model_name = model_name
         self.llm = LLM(
-        model=model_name,
-        dtype="auto",
-        trust_remote_code=True,  
+            model=model_name,
+            dtype="auto",
+            trust_remote_code=True,  
         )
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,

@@ -15,7 +15,7 @@ import pandas as pd
 def testModel():
     # Run inference on both train and test sets
     train_data = read_train_data()
-    
+    train_data = train_data[:500]  # Use a subset for quick testing
     agent = LLMForVC() 
     
     inputs = [item["input"] for item in train_data]
@@ -30,8 +30,8 @@ def testModel():
             "prediction": output
         })
     
-    
-    F_score, acc = get_F_score(outputs, train_data["output"])
+    labels = [item["output"] for item in train_data]
+    F_score, acc = get_F_score(outputs, labels)
     print(f"F-score: {F_score}, Accuracy: {acc}")
     
     

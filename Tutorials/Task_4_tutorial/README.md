@@ -33,7 +33,7 @@ bash start.bash
 ## 🛠 Developing Your Model
 
 This example provide a pure method to use LLM predict the VCBench. 
-The most important part is the output file of the VCbench_dev.csv.
+The most important part is the output file format of the VCbench_dev.csv.
 You can develop your own method but please follow the example code to save the output for submission.
 
 

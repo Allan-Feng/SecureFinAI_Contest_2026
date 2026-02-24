@@ -15,7 +15,7 @@ import pandas as pd
 def testModel():
     # Run inference on both train and test sets
     train_data = read_train_data()
-    train_data = train_data[:500]  # Use a subset for quick testing
+    train_data = train_data[:100]  # Use a subset for quick testing
     agent = LLMForVC() 
     
     inputs = [item["input"] for item in train_data]

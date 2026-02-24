@@ -60,4 +60,5 @@ Participants must submit the following:
 4. **Prediction Output File**  
    - Include your final predictions in the repository.
    - The file format must match the provided example.
+   - You may change the prediction output file name, as long as it remains in **CSV** format (`.csv`) and contains the **same columns** as the provided example.
 

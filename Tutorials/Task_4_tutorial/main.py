@@ -38,7 +38,7 @@ def testModel():
     
 
 def dev_prediction():
-    dev_data = read_dev_data()[0:100]
+    dev_data = read_dev_data()
     inputs = [item["input"] for item in dev_data]
     agent = LLMForVC() 
     

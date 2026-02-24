@@ -15,7 +15,7 @@ import pandas as pd
 def testModel():
     # Run inference on both train and test sets
     train_data = read_train_data()
-    train_data = train_data[:100]  # Use a subset for quick testing
+    train_data = train_data  # Use a subset for quick testing
     agent = LLMForVC() 
     
     inputs = [item["input"] for item in train_data]
@@ -39,10 +39,10 @@ def testModel():
 
 def dev_prediction():
     dev_data = read_dev_data()
-    
+    inputs = [item["input"] for item in dev_data]
     agent = LLMForVC() 
     
-    outputs = agent.batch_predict(dev_data["input"])
+    outputs = agent.batch_predict(inputs)
     
     results = []
     for output, profile in zip(outputs, dev_data):
@@ -61,7 +61,7 @@ def dev_prediction():
     
 
 def main():
-    testModel()
+    dev_prediction()
     
     
 if __name__ == "__main__":

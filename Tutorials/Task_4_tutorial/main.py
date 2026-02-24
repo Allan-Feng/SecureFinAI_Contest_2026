@@ -11,14 +11,15 @@ from evaluate import get_F_score
 import json
 from example_model import LLMForVC
 import pandas as pd
+
 def testModel():
     # Run inference on both train and test sets
     train_data = read_train_data()
-    test_data = read_test_data()
     
-    agent = LLMForVC()  # Initialize your model/agent here
+    agent = LLMForVC() 
     
-    outputs = agent.batch_predict(train_data["input"])
+    inputs = [item["input"] for item in train_data]
+    outputs = agent.batch_predict(inputs)
     
     results = []
     for output, profile in zip(outputs, train_data):
@@ -39,7 +40,7 @@ def testModel():
 def dev_prediction():
     dev_data = read_dev_data()
     
-    agent = LLMForVC()  # Initialize your model/agent here
+    agent = LLMForVC() 
     
     outputs = agent.batch_predict(dev_data["input"])
     

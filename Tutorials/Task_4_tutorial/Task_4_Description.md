@@ -11,8 +11,7 @@ This task tests the ability of Large Language Models to act as Venture Capitalis
 **Datasets**
 
 *   **VCBench**: A benchmark for predicting founder success in venture capital with 9,000 anonymized founder profiles.
-    - **HuggingFace**: [cloudcatcher2/VCBench](https://huggingface.co/datasets/cloudcatcher2/VCBench)
-    - **Paper**: [VCBench: Benchmarking LLMs in Venture Capital](https://arxiv.org/abs/2501.xxxxx)
+    - **Paper**: [VCBench: Benchmarking LLMs in Venture Capital](https://arxiv.org/abs/2509.14448)
     - **Website**: [https://www.vcbench.com/](https://www.vcbench.com/)
 
 **Dataset Details**

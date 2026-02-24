@@ -1,6 +1,3 @@
-
-
-
 def get_F_score(predictions, ground_truths):
     
     num_true = sum((pred["prediction"] == 1 and int(gt) == 1) for pred, gt in zip(predictions, ground_truths))

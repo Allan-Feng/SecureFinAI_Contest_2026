@@ -10,7 +10,7 @@ weight: 2
 
     * Please register [here](https://docs.google.com/forms/d/e/1FAIpQLSdqjrC3sjjIlYzlWelsbcxTg_5oFsPVaTJcWTLqLueU1dAlhQ/viewform?usp=dialog).
 * **Starter-Kit Release**: Jan 30, 2026
-* **Paper Submission Deadline**: March 10, 2026
+* **Paper Submission Deadline**: March 10, 2026 (the submission system is left open until March 22, 2026)
 * **Paper Camera Ready Deadline**: Apr 1, 2026
 * **Solution Submission Deadline**: Apr 20, 2026
 

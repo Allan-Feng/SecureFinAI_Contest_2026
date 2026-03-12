@@ -7,7 +7,7 @@ weight: 3
 
 ## Submission
 
-### **Model Submission Requirements**:
+### **Model Submission**: https://www.cloud-conf.net/datasec/2026/ids/SecureFinAI.html
 
 Please provide your solution to [TBD](). Each team can submit multiple times and we will only use the latest version you submit. Your models and scripts should be accessible and runnable.
 

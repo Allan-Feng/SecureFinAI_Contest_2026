@@ -1,51 +1,26 @@
 # Task V: Agentic Trading
 
-**Description**
-This task focuses on developing models for real-time financial decision making under uncertain conditions. It formulates trading as a reasoning-to-action problem, where agents must integrate time-varying signals such as prices, newsflow, and asset-specific fundamentals, make a discrete trading decision, and justify that decision with evidence-grounded rationales. Evaluation emphasizes both profitability and risk, and is conducted under a leakage-resistant, time-ordered protocol.
+**Why this matters:** AI agents have seen rapid development and have been applied to financial trading tasks. Recent work such as Agent Market Arena (AMA) by FinAI and Alpha Arena by NoF1 introduces arena-style benchmarks that demonstrate the capability of AI agents to trade in market environments under standardized settings. While these benchmarks focus on comparing agent performance within fixed interfaces, this task emphasizes flexibility and agent design. Participants are encouraged to build their own trading agents, including data, agent architecture, and trading strategy, and evaluate them through live paper trading on Alpaca for stock or cryptocurrency markets.
 
-**Objective & Constraints**
-*   **Action**: Models must output a discrete trading action (Buy, Hold, or Sell) based on the daily market context.
-*   **Rationale**: Models must provide a concise textual rationale (maximum 50 words) that justifies the decision using evidence from the available inputs.
-*   **Evaluation Protocol**: Evaluation follows a live, time-ordered setup with fixed daily submission deadlines.
+This task focuses on developing LLM agents using OpenClaw for quantitative trading in a real-time paper trading setting. It formulates trading as a **reasoning-to-action** problem, where OpenClaw agents integrate real-time signals such as **prices, newsflow, and asset-specific fundamentals** and make trading actions. Evaluation will be conducted via paper trading on an Alpaca paper trading account, with metrics emphasizing profitability and risk.
 
 **Datasets**
+Participants may fetch historical market data from Alpaca Market Data API:
+* **Stock**: [https://alpaca.markets/sdks/python/api_reference/data/stock.html](https://alpaca.markets/sdks/python/api_reference/data/stock.html)
+* **Crypto**: [https://alpaca.markets/sdks/python/api_reference/data/crypto.html](https://alpaca.markets/sdks/python/api_reference/data/crypto.html)
 
-*   **ETH (Crypto)**: Daily snapshots starting from 2025-08-01, updated daily.
-    - Price data (OHLCV)
-    - Synthesized newsflow
-    - Momentum annotations
-    - **Data Source**: Provided by organizers (TBA)
-    
-*   **MSFT (Equity)**: Daily snapshots starting from 2025-08-01, updated daily.
-    - Price data (OHLCV)
-    - Newsflow
-    - Momentum labels
-    - Relevant financial filings
-    - **Data Source**: Provided by organizers (TBA)
+**Evaluation**
+Participants will create an Alpaca paper trading account, run their agent to trade during the evaluation period, and submit required files at the end of the evaluation period.
+* **Time Period:** **April 20 – May 1**.
+* **Initial Capital:** Each account starts with a fixed capital of **$100,000**.
 
-**Publicly Available Data Sources (for reference)**
-- **Yahoo Finance API**: Historical price data via `yfinance` Python package
-- **CoinGecko API**: Crypto price data (free tier available)
-- **Alpha Vantage**: Stock and crypto data (free API key required)
-- **News APIs**: NewsAPI, Finnhub, Alpha Vantage News Sentiment
+**What to Submit**
+* an **orders JSONL** file (time-ordered trading actions),
+* a **daily equity CSV** file,
+* a **snapshot of the Alpaca portfolio value** at the end of the evaluation period.
 
 **Metrics**
-*   **Primary**: Cumulative Return (CR) over the evaluation horizon.
-*   **Secondary**: Sharpe Ratio (SR), Maximum Drawdown (MD), Daily Volatility (DV), and Annualized Volatility (AV).
+* **Primary:** Cumulative Return (**CR**)
+* **Secondary:** Sharpe Ratio (**SR**), Maximum Drawdown (**MD**), Daily Volatility (**DV**), Annualized Volatility (**AV**)
 
-**Submission Requirements**
-
-Participants must submit:
-1. **GitHub Repository**: Public or private repo containing your agent code
-2. **HuggingFace Model Link** (if applicable): Any fine-tuned models uploaded to HuggingFace Hub
-3. **Run Script**: A script (e.g., `run.py`) that we can execute to generate daily trading decisions
-4. **Requirements File**: `requirements.txt` with all dependencies
-
-**Output Format**:
-Daily submissions with:
-- `date`: Trading date
-- `asset`: ETH or MSFT
-- `action`: Buy, Hold, or Sell
-- `rationale`: Text justification (max 50 words)
-
-We will evaluate your submission by running your agent on the evaluation data.
+> *A single paper trading account trade asset from **only one market type: stock/crypto**. Create two accounts if you are participating in both the stock and crypto tracks. Stock and crypto tracks are evaluated separately.*
